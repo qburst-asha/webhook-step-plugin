@@ -8,9 +8,7 @@ pipeline {
             }
         }
         stage('Wait on Webhook') {
-            options {
-                timeout(time: 3, unit: "MINUTES")
-            }
+            sleep 60
             steps {
                 script {
                     withCredentials([string(credentialsId: 'webhook_secret', variable: 'SECRET')]) { 
